@@ -2,8 +2,7 @@ body {
   background: #fff; 
   color: black; 
   font-family: Arial, Helvetica, sans-serif; 
-  background: -webkit-linear-gradient(to right, #ed397b, #e8e8e8); 
-  background: linear-gradient(to right, #ff0000, #ed397b); 
+  background: repeating-radial-gradient(#f82626, #ed397b); 
 } 
 
 #title { 
@@ -60,6 +59,7 @@ switch {
 }
 
 .checkbox {
+  border:black;
   position: relative;
   display: flex;
   background: white;
@@ -67,6 +67,7 @@ switch {
   width: 170px;
   border-radius: 30px;
   margin: 5% auto; /* Center horizontally using auto for left and right margins */
+  box-shadow: 0px 0px 3px black, 0px 0px 5px black;
 }
 
 .checkbox .slide {
@@ -97,7 +98,7 @@ switch {
   height: 45px;
   position: relative;
   border-radius: 25px;
-  background: #FF8C00;
+  background: repeating-radial-gradient(yellow, magenta);
   transition: 0.3s;
   box-shadow: 0px 0px 3px black, 0px 0px 5px black;
   transform: translateX(10%);
@@ -108,11 +109,13 @@ switch {
   /* translateY(5px); */
 }
 
-input#username { 
+input#username {
+  text-align: center; 
   width: 318px; 
 }
 
 input#password { 
+  text-align: center; 
   width: 318px; 
 } 
 
