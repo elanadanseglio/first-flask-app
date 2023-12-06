@@ -28,16 +28,6 @@ def auth():
     
     #toggle on means log in
     if checked== 'on':
-        for dic in users:
-            for key in dic:
-                if usernm == key and passwrd == dic[key]:
-                    flash("Successfully logged in.", 'successful')
-                    return redirect(url_for('index'))
-        flash("Invalid credentials.", 'error')
-        return redirect(url_for('login'))
-    
-    #toggle null means sign up 
-    else:
         if (usernm == "" or usernm == " "):
             flash("Invalid input.", 'error')
             return redirect(url_for('login'))
@@ -50,6 +40,16 @@ def auth():
             
         users.append({usernm: passwrd})
         flash("User added. You can log in now.")
+        return redirect(url_for('login'))
+    
+    #toggle null means sign up 
+    else:
+        for dic in users:
+            for key in dic:
+                if usernm == key and passwrd == dic[key]:
+                    flash("Successfully logged in.", 'successful')
+                    return redirect(url_for('index'))
+        flash("Invalid credentials.", 'error')
         return redirect(url_for('login'))
 
 @app.route('/signOut')

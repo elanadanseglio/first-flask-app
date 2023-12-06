@@ -19,12 +19,18 @@
             </div>
             <div class="section2">
                 <input id="password" name="password" type="password">
-                <button class="button" type="submit">Enter</button>
             </div> 
             <label class="switch"> 
-                <input id="checkbox" name="checkbox" type="checkbox"> 
-                <span class="slider"></span>
+                <input id="checkbox" class ="check" name="checkbox" type="checkbox"> 
+                <div class="checkbox">
+                    <label class="slide" for="checkbox_toggle">
+                        <label class="toggle" for="checkbox_toggle"></label>
+                        <label class="text" for="checkbox_toggle">Sign In</label>
+                        <label class="text" for="checkbox_toggle">Sign Up</label>
+                    </label>
+                </div>
             </label>
+            <button class="button" type="submit">Enter</button>
             {% with messages = get_flashed_messages(with_categories=true) %}
                 {% if messages %}
                     <ul class=flashes>

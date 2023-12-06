@@ -6,9 +6,16 @@ let clearButton = document.getElementById("clear");
 let loginButton = document.getElementById("login");
 let userInput = document.getElementById("username");
 let passInput = document.getElementById("password");
-// let signUpButton = document.getElementById("sign-up");
 let signOutButton = document.getElementById("sign-out");
 
+document.addEventListener('DOMContentLoaded', function () {
+    const checkbox = document.getElementById('checkbox');
+    const signText = document.querySelector('.sign-text');
+  
+    checkbox.addEventListener('change', function () {
+      signText.textContent = this.checked ? 'Sign In' : 'Sign Up';
+    });
+});
 
 let addTask = function(){
     if (taskInput.value == " ") {
@@ -95,3 +102,4 @@ let clear = function() {
     completedTasks.innerHTML = "";
 }
 clearButton.addEventListener('click', clear);
+
