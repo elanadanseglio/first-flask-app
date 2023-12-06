@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>To-do list</title> 
+    <link rel="stylesheet" href="static/style.css"> 
+</head> 
+<body> 
+    <div class="container"> 
+    <div class="section1"> 
+        {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <ul class=flashes>
+                    {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+        <h1 id="title">TO DO LIST</h1> 
+        <p> 
+            <label for="new-task">Create New Task</label> 
+            <input id="new-task" type="text"> 
+            <button id="addButton">Add</button>
+        </p> 
+    </div> 
+    <div class="section2"> 
+        <h3>To Do</h3> 
+        <ul id="incomplete-tasks"> </ul> 
+    </div> 
+    <div class="section3"> 
+    <h3>Completed</h3> 
+    <ul id="completed-tasks"> 
+
+    </ul> 
+    </div> 
+
+    <div class="section5"> 
+        <button id="clear"> 
+            <p>Clear</p> 
+        </button>
+        <form action="{{ url_for('signOut')}}">
+            <button id="sign-out">
+                <p>Sign Out</p>
+            </button id="dialog">
+        </form>
+        </div>
+    </div> 
+</div> 
+<script src="static/script.js"></script> 
+</body>
+</html>

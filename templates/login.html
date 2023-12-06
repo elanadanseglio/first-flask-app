@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title> Log In </title> 
+    <link rel="stylesheet" href="static/style2.css"> 
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <h1>Welcome!</h1>
+            <h2>Please log in or sign up below.</h2>
+        </div>
+        <form action="{{ url_for('auth')}}" method="POST">
+            <div class="section1"> 
+                <input id="username" name="username" type="username"> 
+            </div>
+            <div class="section2">
+                <input id="password" name="password" type="password">
+                <button class="button" type="submit">Enter</button>
+            </div> 
+            <label class="switch"> 
+                <input id="checkbox" name="checkbox" type="checkbox"> 
+                <span class="slider"></span>
+            </label>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <ul class=flashes>
+                    {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+        </form>
+    </div>
+    <script src="static/script.js"></script> 
+</body>
+</html>
