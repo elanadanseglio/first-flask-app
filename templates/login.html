@@ -6,7 +6,6 @@
     <title> Log In </title> 
     <link rel="stylesheet" href="static/style2.css"> 
 </head>
-
 <body>
     <div class="container">
         <div>
@@ -20,20 +19,20 @@
             <div class="section2">
                 <input id="password" name="password" type="password">
             </div> 
-            <label class="switch"> 
-                <input id="checkbox" class ="check" name="checkbox" type="checkbox"> 
-                <div class="checkbox">
-                    <label class="slide" for="checkbox_toggle">
-                        <label class="toggle" for="checkbox_toggle"></label>
-                        <label class="text" for="checkbox_toggle">Sign In</label>
-                        <label class="text" for="checkbox_toggle">Sign Up</label>
-                    </label>
-                </div>
-            </label>
+            <div class="switch">
+                <input id="checkbox_toggle" class="check" name="checkbox" type="checkbox">
+                <label class="checkbox" for="checkbox_toggle">
+                  <div class="slide" onclick="toggleSwitch()">
+                    <div class="text left">Sign In</div>
+                    <div class="toggle"></div>
+                    <div class="text right">Sign Up</div>
+                  </div>
+                </label>
+            </div>
             <button class="button" type="submit">Enter</button>
             {% with messages = get_flashed_messages(with_categories=true) %}
                 {% if messages %}
-                    <ul class=flashes>
+                    <ul class="flashes">
                     {% for category, message in messages %}
                     <li class="{{ category }}">{{ message }}</li>
                     {% endfor %}
