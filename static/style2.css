@@ -18,6 +18,20 @@ body {
   align-items: center;
 }
 
+.alert {
+  align-items: center;
+  margin: auto 25px;
+  transform: translateY(10px);
+}
+
+.alert.error {
+  color: blue;
+}
+
+.alert.success {
+  color: rgb(234, 255, 0);
+}
+
 button { 
   background-color: grey; 
   border: 1; 
