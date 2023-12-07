@@ -1,3 +1,5 @@
 # first-flask-app
 
-Solo Mini-project for Fiserv-TED Program :)
+Solo Mini-project :)
+
+To-Do List made with Flask-Python 
